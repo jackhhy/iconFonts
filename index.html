@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>演示实例</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link href="./font-awesome/css/font-awesome.css?v=4.7.0" rel="stylesheet">
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <script src="./layui/layui.js"></script>
+    <script>
+        layui.config({
+            base: './module/'
+        }).extend({
+            iconHhysFa: 'iconHhys/iconHhysFa'
+        });
+    </script>
+</head>
+
+<body style="padding: 18px;">
+    <div class="layui-form">
+        <blockquote class="layui-elem-quote">
+       layui图标实例
+       <a class="layui-btn layui-btn-normal" href="https://gitee.com/luckygyl/iconFonts" target="_blank">码云地址</a>
+        </blockquote>   
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">默认图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhysFa" lay-filter="" class="hide">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">自定义图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhysFa2" value="layui-icon-face-smile-fine" lay-filter="iconHhysFa2" class="hide">
+            </div>
+        </div>
+        
+         <div class="layui-form-item">
+            <label for="" class="layui-form-label">js自定义选中图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhysFa3" value="" lay-filter="iconHhysFa3" class="hide">
+            </div>
+        </div>
+
+
+  <blockquote class="layui-elem-quote">
+       font-awesome图标实例
+        </blockquote>   
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">默认图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhys" lay-filter="iconHhys" class="hide">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">自定义图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhys2" value="fa-home" lay-filter="iconHhys2" class="hide">
+            </div>
+        </div>
+        
+         <div class="layui-form-item">
+            <label for="" class="layui-form-label">js自定义选中图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhys3" value="" lay-filter="iconHhys3" class="hide">
+            </div>
+        </div>
+
+
+        <script>
+            layui.use(['iconHhysFa', 'form', 'layer'], function() {
+                var iconHhysFa = layui.iconHhysFa,
+                    form = layui.form,
+                    layer = layui.layer,
+                    $ = layui.$;
+
+                iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhysFa',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'fontClass',
+                    // 是否开启搜索：true/false，默认true
+                    search: true,
+                    // 是否开启分页：true/false，默认true
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    url: '',
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+                iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhysFa2',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'fontClass',
+                    // 是否开启搜索：true/false
+                    search: true,
+                    url: '',
+                    // 是否开启分页
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+
+               iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhysFa3',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'fontClass',
+                    // 是否开启搜索：true/false，默认true
+                    search: true,
+                    // 是否开启分页：true/false，默认true
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    url: '',
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+               //js 操作自定义选中图标
+               iconHhysFa.checkIcon("iconHhysFa3","layui-icon-rate");
+               
+               ////////font-awesome图标实例
+               
+                 iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhys',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'awesome',
+                    // 是否开启搜索：true/false，默认true
+                    search: true,
+                    // 是否开启分页：true/false，默认true
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    // fa 图标接口
+                    url: './font-awesome/less/variables.less',
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+
+                iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhys2',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'awesome',
+                    // 是否开启搜索：true/false
+                    search: true,
+                    // fa 图标接口
+                    url: './font-awesome/less/variables.less',
+                    // 是否开启分页
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+
+               iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhys3',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'awesome',
+                    // 是否开启搜索：true/false，默认true
+                    search: true,
+                    // 是否开启分页：true/false，默认true
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    // fa 图标接口
+                    url: './font-awesome/less/variables.less',
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+               //js 操作自定义选中图标
+               iconHhysFa.checkAwesome("iconHhys3","fa-address-book");
+
+            });
+        </script>
+</body>
+
+</html>
