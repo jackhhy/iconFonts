@@ -253,6 +253,6 @@ font-awesome 有786个图标。
 
 #### 疑问联系
 
-1. 使用 [iconFonts](https://gitee.com/luckygyl/iconFonts) 过程中有任何问题请联系：jackhhy520@qq.com
+1. 使用 [iconHhysFa](https://gitee.com/luckygyl/iconFonts) 过程中有任何问题请联系：jackhhy520@qq.com
    或者在下方评论留言。
 2. 如果觉得不错，点个  **Star**  再走也不迟呀！
