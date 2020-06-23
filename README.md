@@ -1,4 +1,4 @@
-# iconFonts 图标选择器
+# iconHhysFa 图标选择器
 
 #### 介绍
 iconHhysFa图标选择器， [layui](https://www.layui.com/doc/element/icon.html) 图标 140个，
@@ -235,8 +235,12 @@ font-awesome 有786个图标。
 
 
 4. 项目截图
-（1、layui 图标）
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0705/112511_b95f4287_1513275.png "屏幕截图.png")
+  layui 的
+  ![输入图片说明](https://images.gitee.com/uploads/images/2020/0623/153917_0171914a_1513275.png "微信截图_20200623153946.png")
+  
+  font-awesome的
+  ![输入图片说明](https://images.gitee.com/uploads/images/2020/0623/154006_6c026cba_1513275.png "_20200623154040.png")
+
 
 
 #### 特别鸣谢
