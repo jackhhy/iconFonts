@@ -1,70 +1,238 @@
 # iconFonts 图标选择器
 
 #### 介绍
-iconFonts图标选择器， [layui](https://www.layui.com/doc/element/icon.html) 图标 140个
+iconHhysFa图标选择器， [layui](https://www.layui.com/doc/element/icon.html) 图标 140个，
+font-awesome 有786个图标。
 
 #### 使用教程
 
-1. 加载iconFonts
+1. 加载iconHhysFa
 
 ```
- layui.config({
-        base: "{__FRAME_PATH}js/"  // 配置你下载的iconFonts文件夹路径
-    }).extend({
-        IconFonts: 'iconFonts/iconFonts',
-    });
-
-```
-
-
-2. layui 使用iconFonts
-
-```
- layui.use(['element','form', 'jquery', 'IconFonts'], function () {
-        var element = layui.element;
-        var form = layui.form;
-        var $ = layui.jquery;
-        var IconFonts=layui.IconFonts;
-
-        //图标选择器
-        IconFonts.render({
-           // 选择器，推荐使用input
-                elem: '#iconFonts',
-                // 数据类型：fontClass/unicode，推荐使用fontClass
-                type: 'fontClass',
-                // 是否开启搜索：true/false，默认true
-                search: true,
-                // 是否开启分页：true/false，默认true
-                page: true,
-                // 每页显示数量，默认12
-                limit: 12,
-                // 点击回调
-                click: function (data) {
-                    console.log(data);
-                }
-                // 渲染成功后的回调
-                success: function(d) {
-                    console.log(d);
-                }
+     layui.config({
+            base: './module/'
+        }).extend({
+            iconHhysFa: 'iconHhys/iconHhysFa'
         });
 
-       /**
-         * 默认选选中图标
-         */
-        IconFonts.checkIcon("iconFonts","layui-icon-star");
 
 ```
 
-3. html
+2. 静态页面
 
 ```
- <div class="layui-form-item">
-      <label class="layui-form-label">选择图标</label>
-           <div class="layui-input-block">
-               <input type="text" name="icon" id="iconFonts"  lay-filter="iconFonts" value=""   class="layui-input">
-           </div>
-  </div>
+<div class="layui-form">
+        <blockquote class="layui-elem-quote">
+       layui图标实例
+       <a class="layui-btn layui-btn-normal" href="https://gitee.com/luckygyl/iconFonts" target="_blank">码云地址</a>
+        </blockquote>   
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">默认图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhysFa" lay-filter="" class="hide">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">自定义图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhysFa2" value="layui-icon-face-smile-fine" lay-filter="iconHhysFa2" class="hide">
+            </div>
+        </div>
+        
+         <div class="layui-form-item">
+            <label for="" class="layui-form-label">js自定义选中图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhysFa3" value="" lay-filter="iconHhysFa3" class="hide">
+            </div>
+        </div>
+
+
+  <blockquote class="layui-elem-quote">
+       font-awesome图标实例
+        </blockquote>   
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">默认图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhys" lay-filter="iconHhys" class="hide">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">自定义图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhys2" value="fa-home" lay-filter="iconHhys2" class="hide">
+            </div>
+        </div>
+        
+         <div class="layui-form-item">
+            <label for="" class="layui-form-label">js自定义选中图标：</label>
+            <div class="layui-input-block">
+                <input type="text" id="iconHhys3" value="" lay-filter="iconHhys3" class="hide">
+            </div>
+        </div>
+
 ```
+
+3. js
+
+```
+ <script>
+            layui.use(['iconHhysFa', 'form', 'layer'], function() {
+                var iconHhysFa = layui.iconHhysFa,
+                    form = layui.form,
+                    layer = layui.layer,
+                    $ = layui.$;
+
+                iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhysFa',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'fontClass',
+                    // 是否开启搜索：true/false，默认true
+                    search: true,
+                    // 是否开启分页：true/false，默认true
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    url: '',
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+                iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhysFa2',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'fontClass',
+                    // 是否开启搜索：true/false
+                    search: true,
+                    url: '',
+                    // 是否开启分页
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+
+               iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhysFa3',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'fontClass',
+                    // 是否开启搜索：true/false，默认true
+                    search: true,
+                    // 是否开启分页：true/false，默认true
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    url: '',
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+               //js 操作自定义选中图标
+               iconHhysFa.checkIcon("iconHhysFa3","layui-icon-rate");
+               
+               ////////font-awesome图标实例
+               
+                 iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhys',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'awesome',
+                    // 是否开启搜索：true/false，默认true
+                    search: true,
+                    // 是否开启分页：true/false，默认true
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    // fa 图标接口
+                    url: './font-awesome/less/variables.less',
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+
+                iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhys2',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'awesome',
+                    // 是否开启搜索：true/false
+                    search: true,
+                    // fa 图标接口
+                    url: './font-awesome/less/variables.less',
+                    // 是否开启分页
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+
+               iconHhysFa.render({
+                    // 选择器，推荐使用input
+                    elem: '#iconHhys3',
+                    // 数据类型：fontClass/awesome，推荐使用fontClass
+                    type: 'awesome',
+                    // 是否开启搜索：true/false，默认true
+                    search: true,
+                    // 是否开启分页：true/false，默认true
+                    page: true,
+                    // 每页显示数量，默认12
+                    limit: 12,
+                    // fa 图标接口
+                    url: './font-awesome/less/variables.less',
+                    // 点击回调
+                    click: function(data) {
+                        console.log(data);
+                    },
+                    // 渲染成功后的回调
+                    success: function(d) {
+                        console.log(d);
+                    }
+                });
+
+               //js 操作自定义选中图标
+               iconHhysFa.checkAwesome("iconHhys3","fa-address-book");
+
+            });
+        </script>
+
+```
+
 
 4. 项目截图
 （1、layui 图标）
